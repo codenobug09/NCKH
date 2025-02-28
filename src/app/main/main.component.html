@@ -1542,35 +1542,44 @@
         }
       }
     </style>
+
     <input type="checkbox" id="click" />
     <label for="click" class="chatbot">
       <i class="fab fa-facebook-messenger"></i>
       <i class="fas fa-times"></i>
     </label>
-    <div class="wrapper">
-      <div class="title">Chat With Us Now</div>
-      <div class="form">
-        <div class="bot-inbox inbox">
-          <div class="icon">
-            <i class="fas fa-user"></i>
+    <form [formGroup]="chatbot" class="wrapper">
+      <div>
+        <div class="title">Chat With Us Now</div>
+        <div class="form">
+          <div class="bot-inbox inbox">
+            <div class="icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="msg-header">
+              <p>Hello there, how can I help you?</p>
+            </div>
+            <div>
+              {{ response }}
+            </div>
+            <div></div>
           </div>
-          <div class="msg-header">
-            <p>Hello there, how can I help you?</p>
+        </div>
+
+        <div class="typing-field">
+          <div class="input-data">
+            <input
+              id="data"
+              type="text"
+              placeholder="Type something..."
+              formControlName="message"
+              required
+            />
+            <button (click)="getChat()" id="send-btn">Send</button>
           </div>
         </div>
       </div>
-      <div class="typing-field">
-        <div class="input-data">
-          <input
-            id="data"
-            type="text"
-            placeholder="Type something..."
-            required
-          />
-          <button id="send-btn">Send</button>
-        </div>
-      </div>
-    </div>
+    </form>
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
