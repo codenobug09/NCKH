@@ -1552,31 +1552,46 @@
       <div>
         <div class="title">Chat With Us Now</div>
         <div class="form">
-          <div class="bot-inbox inbox">
-            <div class="icon">
-              <i class="fas fa-user"></i>
+          <div class="dev_chau_frame_chat">
+            <div class="bot-inbox inbox">
+              <div class="msg-header">
+                <p>
+                  <i class="fas fa-robot"></i>Hello there, how can I help you?
+                </p>
+              </div>
             </div>
-            <div class="msg-header">
-              <p>Hello there, how can I help you?</p>
+            <br />
+            <div
+              class="msg-body"
+              *ngFor="let chat of chats"
+            >
+              <p class="message_user">
+                <i class="fas fa-user"></i>{{ chat.message }}
+              </p>
+
+              <p class="message">
+                <i class="fas fa-robot"></i>{{ chat.response }}
+              </p>
             </div>
-            <div>
-              {{ response }}
+            <div class="loading" *ngIf="!boolean">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
             </div>
-            <div></div>
           </div>
         </div>
+      </div>
 
-        <div class="typing-field">
-          <div class="input-data">
-            <input
-              id="data"
-              type="text"
-              placeholder="Type something..."
-              formControlName="message"
-              required
-            />
-            <button (click)="getChat()" id="send-btn">Send</button>
-          </div>
+      <div class="typing-field">
+        <div class="input-data">
+          <input
+            id="data"
+            type="text"
+            placeholder="Type something..."
+            formControlName="message"
+            required
+          />
+          <button (click)="getChat()" id="send-btn">Send</button>
         </div>
       </div>
     </form>
