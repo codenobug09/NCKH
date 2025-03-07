@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
-
+import { environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,7 +11,7 @@ export class ChatbptService {
   constructor(private http: HttpClient) {}
   getChat(message: string): Observable<response> {
     return this.http.post<response>(
-      'http://localhost:8080/api/chat/test',
+      `${environment.apiUrl}/chat/test`,
       message,
       {
         headers: {
