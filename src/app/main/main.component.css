@@ -1955,8 +1955,8 @@ label i.fas {
   bottom: 0px;
   max-width: 400px;
   background: #fff;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
+  border-radius: 12px;
+  border: 2px solid lightgrey;
   border-top: 0px;
   opacity: 0;
   pointer-events: none;
@@ -1977,13 +1977,13 @@ label i.fas {
   line-height: 60px;
   text-align: center;
   border-bottom: 1px solid #006fef;
-  border-radius: 5px 5px 0 0;
+  border-radius: 12px 12px 0 0;
 }
 .wrapper .form {
-  padding: 20px 15px;
+  padding: 20px 10px;
   width: 400px;
-  min-height: 400px;
-  max-height: 400px;
+  min-height: 320px;
+  max-height: 320px;
   overflow-y: auto;
 }
 .wrapper .form .inbox {
@@ -2005,19 +2005,22 @@ label i.fas {
 }
 .wrapper .form .inbox .msg-header {
   max-width: 80%;
+  display: flex;
+  align-items: flex-end;
 }
 .form .inbox .msg-header p {
-  color: #fff;
-  background: #007bff;
-  border-radius: 10px;
-  padding: 8px 10px;
+  color: #000;
+  background: #f1efef;
+  border-radius: 6px;
+  padding: 5px 10px;
   font-size: 12px;
   max-width: 270px;
+  margin-bottom: 0;
   word-break: initial;
 }
 .form .user-inbox .msg-header p {
   color: #333;
-  background: #efefef;
+  background: #f1efef;
 }
 .wrapper .typing-field {
   padding-left: 5px;
@@ -2028,7 +2031,7 @@ label i.fas {
   justify-content: space-evenly;
   background: #efefef;
   border-top: 1px solid #d9d9d9;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 12px 12px;
 }
 .wrapper .typing-field .input-data {
   height: 40px;
@@ -2103,15 +2106,20 @@ label i.fas {
 }
 .fas.fa-user,
 .fas.fa-robot {
+  font-size: 12px;
   margin-right: 5px;
+<<<<<<< HEAD
+  padding: 4px;
+=======
   padding: 5px;
+>>>>>>> 846d16b043c05dd769d1e2bdf4ce16fe052b8646
   border-radius: 100%;
-  background-color: white;
-  color: #007bff;
+  background-color: #007bff;
+  color: #fff;
 }
 
 .loading {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2120,8 +2128,8 @@ label i.fas {
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   margin: 0 4px;
   background-color: #007bff;
   border-radius: 50%;
@@ -2149,4 +2157,47 @@ label i.fas {
   40% {
     transform: translateY(-10px);
   }
+}
+
+/* Hoang */
+.chat-boxs {
+  /* position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%); */
+  width: 400px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+.chat-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  max-width: 190px;
+  flex: 1;
+  padding: 8px;
+  border-radius: 20px;
+}
+.chat-box button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.chat-box .btn-style {
+  padding: 6px;
+}
+
+.select-util {
+  display: flex;
+  margin-left: 12px;
+}
+
+.util {
+  margin-right: 12px;
 }

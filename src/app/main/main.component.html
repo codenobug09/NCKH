@@ -1289,6 +1289,7 @@
                 </p>
               </div>
             </div>
+y
 
             <div class="testimonial-wrap">
               <div class="testimonial-item">
@@ -1555,16 +1556,12 @@
           <div class="dev_chau_frame_chat">
             <div class="bot-inbox inbox">
               <div class="msg-header">
-                <p>
-                  <i class="fas fa-robot"></i>Hello there, how can I help you?
-                </p>
+                <i class="fas fa-robot"></i>
+                <p>Hello there, how can I help you?</p>
               </div>
             </div>
             <br />
-            <div
-              class="msg-body"
-              *ngFor="let chat of chats"
-            >
+            <div class="msg-body" *ngFor="let chat of chats">
               <p class="message_user">
                 <i class="fas fa-user"></i>{{ chat.message }}
               </p>
@@ -1582,7 +1579,7 @@
         </div>
       </div>
 
-      <div class="typing-field">
+      <!-- <div class="typing-field">
         <div class="input-data">
           <input
             id="data"
@@ -1593,6 +1590,31 @@
           />
           <button (click)="getChat()" id="send-btn">Send</button>
         </div>
+      </div> -->
+      <div class="chat-boxs d-flex align-items-center typing-field">
+        <!-- <button class="btn btn-style">
+          <i class="fa-solid fa-camera"></i>
+        </button>
+        <button class="btn but-style">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <button class="btn but-style">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+         -->
+        <div class="select-util">
+          <i class="fa-solid fa-camera util"></i>
+          <i class="fa-solid fa-microphone util"></i>
+          <i class="fa-solid fa-plus util"></i>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập nội dung..."
+        />
+        <button class="btn" (click)="getChat()" id="send-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
       </div>
     </form>
     <!-- Vendor JS Files -->
