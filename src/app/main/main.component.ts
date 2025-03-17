@@ -30,14 +30,25 @@ export class MainComponent {
       this.chats.push(newChat);
     } else {
       this.boolean = false;
-      this.service.getChat(this.chatbot.value).subscribe((data) => {
-        const newChat: Chat = {
-          message: this.chatbot.value.message,
-          response: data.response,
-        };
-        this.chats.push(newChat);
-        this.boolean = true;
-        this.chatbot.reset();
+      this.service.getChat(this.chatbot.value).subscribe({
+        next: (data: response) => {
+          const newChat: Chat = {
+            message: this.chatbot.value.message,
+            response: data.response,
+          };
+          this.chats.push(newChat);
+          this.boolean = true;
+          this.chatbot.reset();
+        },
+        error: (error: response) => {
+          const newChat: Chat = {
+            message: '',
+            response: error.response,
+          };
+          this.chats.push(newChat);
+          this.boolean = true;
+          this.chatbot.reset();
+        },
       });
     }
   }
