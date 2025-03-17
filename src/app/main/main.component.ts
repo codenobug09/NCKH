@@ -42,8 +42,9 @@ export class MainComponent {
         },
         error: (error: response) => {
           const newChat: Chat = {
-            message: '',
-            response: error.response,
+            message: this.chatbot.value.message,
+            response:
+              'Im sorry, I did not understand that because of an error in the server',
           };
           this.chats.push(newChat);
           this.boolean = true;
