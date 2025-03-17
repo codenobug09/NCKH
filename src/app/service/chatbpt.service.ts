@@ -10,8 +10,17 @@ import { environment } from '../environments/environment';
 export class ChatbptService {
   constructor(private http: HttpClient) {}
   getChat(message: string): Observable<response> {
+    // return this.http.post<response>(
+    //   `${environment.apiUrl}/chat/test`,
+    //   message,
+    //   {
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //   }
+    // );
     return this.http.post<response>(
-      `${environment.apiUrl}/chat/test`,
+      'http://localhost:8080/api/chat/test',
       message,
       {
         headers: {

@@ -1562,13 +1562,18 @@ y
             </div>
             <br />
             <div class="msg-body" *ngFor="let chat of chats">
-              <p class="message_user">
-                <i class="fas fa-user"></i>{{ chat.message }}
-              </p>
-
-              <p class="message">
-                <i class="fas fa-robot"></i>{{ chat.response }}
-              </p>
+              <div style="margin-top: 10px" class="msg_header_1 flex">
+                <p style="margin-right: 5px" class="message_user">
+                  {{ chat.message }}
+                </p>
+                <div><i class="fas fa-user"></i></div>
+              </div>
+              <div style="margin-top: 10px" class="msg_header_1">
+                <div><i class="fas fa-robot"></i></div>
+                <p class="message">
+                  {{ chat.response }}
+                </p>
+              </div>
             </div>
             <div class="loading" *ngIf="!boolean">
               <div class="dot"></div>
@@ -1607,11 +1612,16 @@ y
           <i class="fa-solid fa-microphone util"></i>
           <i class="fa-solid fa-plus util"></i>
         </div>
+
         <input
           type="text"
           class="form-control"
           placeholder="Nhập nội dung..."
+          formControlName="message"
+          required
+          style="border-radius: 20px"
         />
+
         <button class="btn" (click)="getChat()" id="send-btn">
           <i class="fa-solid fa-paper-plane"></i>
         </button>

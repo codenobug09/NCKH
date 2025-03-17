@@ -2088,13 +2088,14 @@ label i.fas {
   flex-direction: column;
   .message,
   .message_user {
-    color: #fff;
-    background: #007bff;
-    border-radius: 10px;
-    padding: 8px 10px;
+    color: #000;
+    background: #f1efef;
+    border-radius: 6px;
+    padding: 5px 10px;
     font-size: 12px;
+    max-width: 270px;
+    margin-bottom: 0;
     word-break: initial;
-    max-width: fit-content;
   }
   .msg-body {
     display: flex;
@@ -2108,11 +2109,7 @@ label i.fas {
 .fas.fa-robot {
   font-size: 12px;
   margin-right: 5px;
-<<<<<<< HEAD
   padding: 4px;
-=======
-  padding: 5px;
->>>>>>> 846d16b043c05dd769d1e2bdf4ce16fe052b8646
   border-radius: 100%;
   background-color: #007bff;
   color: #fff;
@@ -2200,4 +2197,103 @@ label i.fas {
 
 .util {
   margin-right: 12px;
+}
+.msg_header_1 {
+  display: flex;
+}
+.flex {
+  justify-content: flex-end;
+}
+
+/* 🌟 Responsive cho Tablet (768px) */
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 500px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .message_user,
+  .message {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-control {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  #send-btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* 🌟 Responsive cho Mobile (600px) */
+@media (max-width: 600px) {
+  .wrapper {
+    border-radius: 0;
+  }
+
+  .title {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .dev_chau_frame_chat {
+    padding: 8px;
+  }
+
+  .message_user,
+  .message {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .form-control {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  #send-btn {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+
+  /* Ẩn một số icon trên mobile */
+  .select-util {
+    display: none;
+  }
+}
+
+/* 🌟 Responsive cho màn hình rất nhỏ (480px) */
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 400px;
+    width: 100%;
+    margin-left: 100px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .message_user,
+  .message {
+    font-size: 12px;
+  }
+
+  .form-control {
+    font-size: 12px;
+  }
+
+  #send-btn {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+  }
 }

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ChatbptService } from '../service/chatbpt.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { Chat } from '../interfaces/chats.interfaces';
 import { response } from '../interfaces/message.interfaces';
 import { ChatMessage } from '../interfaces/messagechat.interfaces';
+
 @Component({
   selector: 'app-main',
   standalone: false,
@@ -21,15 +22,23 @@ export class MainComponent {
     message: new FormControl(''),
   });
   getChat() {
-    this.boolean = false;
-    this.service.getChat(this.chatbot.value).subscribe((data) => {
+    if (this.chatbot.value.message === '') {
       const newChat: Chat = {
-        message: this.chatbot.value.message,
-        response: data.response,
+        message: '',
+        response: 'Please enter a message',
       };
       this.chats.push(newChat);
-      this.chatbot.reset();
-      this.boolean = true;
-    });
+    } else {
+      this.boolean = false;
+      this.service.getChat(this.chatbot.value).subscribe((data) => {
+        const newChat: Chat = {
+          message: this.chatbot.value.message,
+          response: data.response,
+        };
+        this.chats.push(newChat);
+        this.boolean = true;
+        this.chatbot.reset();
+      });
+    }
   }
 }
