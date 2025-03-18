@@ -2204,6 +2204,13 @@ label i.fas {
 .flex {
   justify-content: flex-end;
 }
+.notification {
+  border: 1px solid red;
+  background-color: red;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+}
 
 /* 🌟 Responsive cho Tablet (768px) */
 @media (max-width: 768px) {
@@ -2272,10 +2279,61 @@ label i.fas {
 
 /* 🌟 Responsive cho màn hình rất nhỏ (480px) */
 @media (max-width: 480px) {
+  .loading {
+    transform: translateX(-240%);
+  }
   .wrapper {
-    max-width: 400px;
+    max-width: 300px;
     width: 100%;
     margin-left: 100px;
+  }
+
+  .msg-body {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .message {
+    width: 190px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .message_user,
+  .message {
+    font-size: 12px;
+  }
+
+  .form-control {
+    font-size: 12px;
+  }
+
+  #send-btn {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 335px) {
+  .loading {
+    transform: translateX(-370%);
+  }
+  .wrapper {
+    max-width: 250px;
+    width: 100%;
+    margin-left: 100px;
+  }
+
+  .msg-body {
+    max-width: 230px;
+    width: 100%;
+  }
+
+  .message {
+    width: 170px;
   }
 
   .title {

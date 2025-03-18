@@ -1546,6 +1546,11 @@ y
 
     <input type="checkbox" id="click" />
     <label for="click" class="chatbot">
+      <div class="notification" *ngIf="this.chats.length != 0">
+        <p style="font-size: 12px; transform: translateY(-38%)">
+          {{ this.chats.length }}
+        </p>
+      </div>
       <i class="fab fa-facebook-messenger"></i>
       <i class="fas fa-times"></i>
     </label>

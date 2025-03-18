@@ -15,6 +15,7 @@ import { ChatMessage } from '../interfaces/messagechat.interfaces';
 export class MainComponent {
   constructor(private service: ChatbptService) {}
   boolean: boolean = true;
+
   message: ChatMessage[] = [];
   chats: Chat[] = [];
 
