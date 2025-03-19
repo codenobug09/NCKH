@@ -14,6 +14,7 @@ import { ChatMessage } from '../interfaces/messagechat.interfaces';
 })
 export class MainComponent {
   constructor(private service: ChatbptService) {}
+  true: string = '';
   boolean: boolean = true;
 
   message: ChatMessage[] = [];
@@ -22,6 +23,16 @@ export class MainComponent {
   chatbot: FormGroup = new FormGroup({
     message: new FormControl(''),
   });
+
+  // mouseLeaveHide() {
+  //   this.boolean = true;
+  // }
+  // mouseSeenterShow() {
+  //   this.boolean = false;
+  // }
+  hideNotify() {
+    this.true = '';
+  }
   getChat() {
     if (this.chatbot.value.message === '') {
       const newChat: Chat = {
@@ -29,6 +40,7 @@ export class MainComponent {
         response: 'Please enter a message',
       };
       this.chats.push(newChat);
+      this.true = 'true';
     } else {
       this.boolean = false;
       this.service.getChat(this.chatbot.value).subscribe({
@@ -39,6 +51,7 @@ export class MainComponent {
           };
           this.chats.push(newChat);
           this.boolean = true;
+          this.true = 'true';
           this.chatbot.reset();
         },
         error: (error: response) => {
@@ -49,6 +62,7 @@ export class MainComponent {
           };
           this.chats.push(newChat);
           this.boolean = true;
+          this.true = 'true';
           this.chatbot.reset();
         },
       });

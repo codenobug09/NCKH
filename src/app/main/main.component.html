@@ -1404,6 +1404,18 @@ y
                 aria-hidden="false"
                 tabindex="0"
               ></iframe>
+              <!-- <div
+                style="
+                  height: 20px;
+                  width: fit-content;
+                  color: white;
+                  background-color: black;
+                "
+                class="message_box"
+                *ngIf="!boolean"
+              >
+                <p>You already have new messages response</p>
+              </div> -->
             </div>
             <!--
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
@@ -1545,8 +1557,8 @@ y
     </style>
 
     <input type="checkbox" id="click" />
-    <label for="click" class="chatbot">
-      <div class="notification" *ngIf="this.chats.length != 0">
+    <label (click)="hideNotify()" for="click" class="chatbot">
+      <div class="notification" *ngIf="this.true === 'true'">
         <p style="font-size: 12px; transform: translateY(-38%)">
           {{ this.chats.length }}
         </p>
@@ -1588,7 +1600,6 @@ y
           </div>
         </div>
       </div>
-
       <!-- <div class="typing-field">
         <div class="input-data">
           <input
@@ -1623,6 +1634,7 @@ y
           class="form-control"
           placeholder="Nhập nội dung..."
           formControlName="message"
+          (click)="hideNotify()"
           required
           style="border-radius: 20px"
         />
