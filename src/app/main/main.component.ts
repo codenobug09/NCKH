@@ -16,7 +16,7 @@ export class MainComponent {
   constructor(private service: ChatbptService) {}
   true: string = '';
   boolean: boolean = true;
-
+  utcTime: string = '2025-03-26 19:00:00.123';
   message: ChatMessage[] = [];
   chats: Chat[] = [];
 
@@ -49,7 +49,9 @@ export class MainComponent {
             message: this.chatbot.value.message,
             response: data.response,
           };
+          console.log(data);
           this.chats.push(newChat);
+
           this.boolean = true;
           this.true = 'true';
           this.chatbot.reset();
@@ -61,6 +63,7 @@ export class MainComponent {
               'Im sorry, I did not understand that because of an error in the server',
           };
           this.chats.push(newChat);
+
           this.boolean = true;
           this.true = 'true';
           this.chatbot.reset();

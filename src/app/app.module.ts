@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UtcToLocalPipe } from './pipe/utc-to-local.pipe';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent],
+  declarations: [AppComponent, MainComponent, UtcToLocalPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
