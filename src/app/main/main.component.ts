@@ -14,6 +14,7 @@ import { ChatMessage } from '../interfaces/messagechat.interfaces';
 })
 export class MainComponent {
   constructor(private service: ChatbptService) {}
+  false: string = 'false';
   true: string = '';
   boolean: boolean = true;
   utcTime: string = '2025-03-26 19:00:00.123';
@@ -32,6 +33,10 @@ export class MainComponent {
   // }
   hideNotify() {
     this.true = '';
+  }
+  showChatMess() {
+    this.false = 'true';
+    alert('Hello You can chat now!');
   }
   getChat() {
     if (this.chatbot.value.message === '') {
