@@ -20,7 +20,7 @@ export class ChatbptService {
     //   }
     // );
     return this.http.post<response>(
-      ' https://105e-1-55-108-253.ngrok-free.app/api/chat/test',
+      ' https://d2c1-42-114-185-117.ngrok-free.app/api/chat/test',
       message,
       {
         headers: {
